@@ -1,0 +1,140 @@
+/* Sober Educational Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    /* Deep Night Theme Palette */
+    --primary: #6366F1;
+    /* Indigo 500 */
+    --primary-hover: #4F46E5;
+    /* Indigo 600 */
+    --primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+
+    --secondary: #EC4899;
+    /* Pink 500 */
+
+    --background: #020617;
+    /* Slate 950 */
+    --background-accent: #0F172A;
+    /* Slate 900 */
+
+    --surface: rgba(30, 41, 59, 0.7);
+    /* Glassy Slate 800 */
+    --surface-highlight: rgba(51, 65, 85, 0.5);
+    /* Glassy Slate 700 */
+
+    --text-main: #F8FAFC;
+    /* Slate 50 */
+    --text-muted: #94A3B8;
+    /* Slate 400 */
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    --font-sans: 'Inter', sans-serif;
+    --font-heading: 'Roboto', sans-serif;
+}
+
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Sober Glassmorphism (Subtle) */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ultra-glass {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Animations (Very Subtle) */
+.stagger-reveal>* {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.stagger-reveal.active>* {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar - Dark Theme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Form Styles */
+input,
+textarea,
+select {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-main) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem 1rem !important;
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary) !important;
+    outline: 2px solid rgba(99, 102, 241, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
